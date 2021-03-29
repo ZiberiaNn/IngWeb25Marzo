@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio 2</title>
+    <script>
+        function esBisiesto() {
+            let año = document.getElementById("año").value;
+            if(año==""){
+                document.getElementById("resultado").innerHTML = ('Ingrese un número.');
+                return false;
+            }
+            else if (((año % 4 == 0) && (año % 100 != 0)) || (año % 400 == 0)) {
+                document.getElementById("resultado").innerHTML = (año + ' es bisiesto. ');
+                return true;
+            }
+            document.getElementById("resultado").innerHTML = (año + ' no es bisiesto. ');
+            return false;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>¿El año ingresado es bisiesto?</h1>
+    <p> Ingrese un año: <input type="number" id="año"></p>
+    <input type="button" onclick="esBisiesto()" value="¿Es bisiesto?">
+    <p id="resultado"></p>
+
+</body>
+
+</html>

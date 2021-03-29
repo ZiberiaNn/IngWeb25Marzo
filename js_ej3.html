@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio 3</title>
+
+</head>
+
+<body>
+    <script>
+        let listaEnteros = [1,2,3,1,3,5];
+        document.body.innerHTML = "<h2>"+listaEnteros.toString()+"</h2>";
+        function elementosNoUnicos()
+        {
+            let count, elementosNoUnicos=[];
+            
+            for(i=0;i<listaEnteros.length;i++)
+            {
+                count = listaEnteros.filter(x => x === listaEnteros[i]).length;
+                if(count>1)
+                {
+                    elementosNoUnicos.push(listaEnteros[i]);
+                }
+            }
+            document.getElementById("resultado").innerHTML=elementosNoUnicos.toString();
+        }
+    </script>
+    <h1>¿Cuáles son los elementos no únicos de la anterior lista?</h1>
+    <input type="button" onclick="elementosNoUnicos()" value="Descubrirlo">
+    <p id="resultado"></p>
+</body>
+
+</html>
